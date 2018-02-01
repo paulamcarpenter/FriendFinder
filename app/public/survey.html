@@ -252,6 +252,7 @@
           ]
         };
 
+
         // AJAX post the data to the friends API.
         $.post("/api/friends", userData, function(data) {
 
@@ -267,6 +268,7 @@
         alert("Please fill out all fields before submitting!");
       }
     });
+    consolelog(userData);
   </script>
 
 </body>
