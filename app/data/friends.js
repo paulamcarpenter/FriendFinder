@@ -1,4 +1,4 @@
-// You should save your application's data inside of app/data/friends.js as an array of objects. Each of these objects should roughly follow the format below.
+var friendsArray = [// You should save your application's data inside of app/data/friends.js as an array of objects. Each of these objects should roughly follow the format below.
   {
     friendsName: "Ahmed",
     friendsPhoto: "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
@@ -12,7 +12,7 @@
       2,
       5,
       4,
-      1
+      1,
     ]
   }
 ];

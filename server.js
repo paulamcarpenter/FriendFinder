@@ -17,11 +17,20 @@ app.use(bodyParser.json());
 // =============================================================
 var friends = [
   {
-    routeName: "yoda",
-    name: "Yoda",
-    role: "Jedi Master",
-    age: 900,
-    forcePoints: 2000
+    friendsName: "paula",
+    friendsPhoto: "https://www.google.com/search?q=photos+of+people&source=lnms&tbm=isch&sa=X&ved=0ahUKEwjCp5mtpIXZAhUM6WMKHRELCiIQ_AUICigB&biw=1517&bih=735#imgrc=238OF2zKYEDY4M:",
+    friendsScore: [
+      5,
+      1,
+      4,
+      4,
+      5,
+      1,
+      2,
+      5,
+      4,
+      1
+    ]
   },
   {
     routeName: "darthmaul",
@@ -69,7 +78,7 @@ app.get("/api/:friends?", function(req, res) {
   if (chosen) {
     console.log(chosen);
 
-    for (var i = 0; i < friendss.length; i++) {
+    for (var i = 0; i < friends.length; i++) {
       if (chosen === friends[i].routeName) {
         return res.json(friends[i]);
       }
