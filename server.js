@@ -32,20 +32,6 @@ var friends = [
       1
     ]
   },
-  {
-    routeName: "darthmaul",
-    name: "Darth Maul",
-    role: "Sith Lord",
-    age: 200,
-    forcePoints: 1200
-  },
-  {
-    routeName: "obiwankenobi",
-    name: "Obi Wan Kenobi",
-    role: "Jedi Master",
-    age: 55,
-    forcePoints: 1350
-  }
 ];
 
 // Routes
@@ -71,8 +57,8 @@ app.get("/all", function(req, res) {
   res.json(friends);
 });
 
-// Search for Specific Character (or all characters) - provides JSON
-app.get("/api/:friends?", function(req, res) {
+// Search for all friends - provides JSON
+app.get("/api/friends", function(req, res) {
   var chosen = req.params.friends;
 
   if (chosen) {
@@ -88,8 +74,8 @@ app.get("/api/:friends?", function(req, res) {
   return res.json(friends);
 });
 
-// Create New Characters - takes in JSON input
-app.post("/api/new", function(req, res) {
+// Create New friends - takes in JSON input
+app.post("/api/friends", function(req, res) {
   // req.body hosts is equal to the JSON post sent from the user
   // This works because of our body-parser middleware
   var newfriend = req.body;
@@ -99,7 +85,7 @@ app.post("/api/new", function(req, res) {
 
   console.log(newfriend);
 
-  characters.push(newfriend);
+  friends.push(newfriend);
 
   res.json(newfriend);
 });
